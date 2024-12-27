@@ -34,18 +34,37 @@ function addTodo(text, checked = false) {
     editBtn.textContent = '수정';
     editBtn.addEventListener('click', ()=>{
         const input = document.createElement('input');
-        input.type = 'text';
-        input.value = text; // 저장 되어있는 텍스트 호출
-        li.replaceChild(input, li.childNodes[1]); // 텍스트 수정
+        input.type = 'text'; 
+        input.value = text;
 
         const saveBtn = document.createElement('button');
         saveBtn.textContent = '저장';
+
+        // 수정 영역 교체
+        li.innerHTML = '';
+        // todoInput.value = input.value;
+        li.append(input, saveBtn);
+
         saveBtn.addEventListener('click', ()=>{
-            if (todoInput.value.trim() === '') {
-                alert('할 일을 입력 해주세요!');
-                return; // 빈 입력 방지
-            };
+            // if (todoInput.value.trim() === '') {
+            //     alert('할 일을 입력 해주세요!');
+            //     return; // 빈 입력 방지
+            // };
             
+
+            // 기존 UI로 복구
+            li.innerHTML = '';
+            li.textContent = input.value; // 수정 실시간으로 화면에 업데이트
+            li.prepend(checkbox);
+            li.appendChild(bindingButton);
+            todoListElement.append(li);
+
+            // 수정 된 목록 로컬 스토리지에 저장
+            text = input.value;
+            const todos = loadTodos();
+            const index = Array.from(li.parentElement.children).indexOf(li);
+            todos[index].text = text;
+            saveTodos(todos);
         });
 
     });
@@ -62,9 +81,13 @@ function addTodo(text, checked = false) {
     });
 
     // ul > li에 추가한 요소
+    const bindingButton = document.createElement('div');
+    bindingButton.classList.add('bindButtonContainer');
+    bindingButton.appendChild(editBtn);
+    bindingButton.appendChild(deleteBtn);
+
     li.prepend(checkbox);
-    li.append(editBtn);
-    li.append(deleteBtn);
+    li.appendChild(bindingButton);
     todoListElement.append(li);
 }
 
@@ -93,6 +116,9 @@ function initialize() {
             alert('할 일을 입력 해주세요!');
             return; // 빈 입력 방지
         };
+
+        // 중복 확인
+
 
         // 새로운 할일 추가
         addTodo(todoInput.value);
