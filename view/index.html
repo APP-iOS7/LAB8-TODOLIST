@@ -9,16 +9,71 @@
     <title>LAB8 - TODOLIST</title>
     <!-- Bootstrap CSS -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/5hb7MF1fjs00HQkD6T4Gz8KaXwZ3T2G+NvLcy5" crossorigin="anonymous"> -->
+    <style>
+        body {
+            background-color: #ecf0f1;
+        }
+        h1 {
+            color: #343a40; /* 다크 그레이 */
+        }
+
+        #taskInput {
+            border-radius: 0.5rem;
+        }
+
+        #submit {
+            width: 100%;
+            border-radius: 0.5rem;
+        }
+
+        .list-group-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 50px;
+            margin: 0.3rem 0;
+            border-radius: 0.5rem;
+        }
+        
+
+        .form-check-input {
+            width: 20px;
+            height: 20px;
+        }
+
+        ul.list-group {
+            position: relative;
+        }
+        
+
+        div.bindButtonContainer {
+            width: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        div.bindButtonContainer button:first-child {
+            background-color: #6E9AF1;
+            color: #031633;
+            border: 0;
+        }
+        div.bindButtonContainer button:last-child {
+            background-color: #DE767E;
+            color: #2C0B0E;
+            border: 0;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
         <h1 class="mt-5 text-center">LAB8 - TODO List</h1>
-        <input type="text" class="form-control" id="taskInput" placeholder="할 일을 메모하세요.">
-        <button class="btn btn-primary" id="submit">할 일 추가</button>
+        <input type="text" class="form-control my-3" id="taskInput" placeholder="할 일을 메모하세요.">
+        <button class="btn btn-primary mb-5" id="submit">할 일 추가</button>
         <ul class="list-group form-switch" id="todoList"></ul>
     </div>
-    <script src="../js/팀원 이름.js"></script>
+    <script src="../js/todo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
