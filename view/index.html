@@ -13,23 +13,18 @@
 
 <body>
     <div class="container">
-        <h1>TODO List</h1>
-        <input type="text" id="taskInput" placeholder="Enter a new task">
-        <button id="submit">Add</button>
-        <ul id="todoList"></ul>
-        <div class="filters">
-            <button data-filter="all">All</button>
-            <button data-filter="active">Active</button>
-            <button data-filter="completed">Completed</button>
-        </div>
-        </div>
-        <script src="../js/kimjunsoo.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
+        <h1 class="mt-5 text-center">TODO List</h1>
+        <input type="text" class="form-control" id="taskInput" placeholder="할 일을 메모하세요.">
+        <button class="btn btn-primary" id="submit">할 일 추가</button>
+        <ul class="list-group form-switch" id="todoList"></ul>
+    </div>
+    <script src="../js/kimjunsoo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
